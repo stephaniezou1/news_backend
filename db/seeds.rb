@@ -7,5 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Article.destroy_all
-
-Article.create(Article.get_top_headlines)
+Article.get_top_headlines
