@@ -7,13 +7,23 @@ class Article < ApplicationRecord
     require 'date'
 
     def self.get_top_headlines
-        news_api_key = ENV['news_api_key']
-        newsapi = News.new(news_api_key)
-        top_headlines =
-            newsapi.get_top_headlines(
-                language: 'en',
-                country: 'us'
-            )
+        newsapi_key = ENV['news_api_key']
+        newsapi = News.new(newsapi_key)
+        # byebug;
+        top_headlines = newsapi.get_top_headlines(language: 'en', country: 'us')
+        top_headlines.each do |article|
+          Article.create!(
+            title: article.title, 
+            author: article.author,
+            description: article.description,
+            source_name: article.name,
+            published_at: article.publishedAt,
+            url: article.url,
+            url_to_image: article.urlToImage,
+            content: article.content
+          )
+        end
+        puts "article seeded"
     end
 
     def summarize

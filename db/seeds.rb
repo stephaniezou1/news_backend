@@ -8,3 +8,4 @@
 
 Article.destroy_all
 Article.get_top_headlines
+puts "seeding done"
