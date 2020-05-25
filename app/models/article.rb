@@ -3,13 +3,14 @@ class Article < ApplicationRecord
     has_many :tags, through: :joiners
 
     require 'news-api'
+    require 'aylien_text_api'
+    require 'date'
 
-    def self.get_top_headlines(category)
-        NEWS_API_KEY = ENV['news_api_key']
-        newsapi = News.new(NEWS_API_KEY)
+    def self.get_top_headlines
+        news_api_key = ENV['news_api_key']
+        newsapi = News.new(news_api_key)
         top_headlines =
             newsapi.get_top_headlines(
-                category: category,
                 language: 'en',
                 country: 'us'
             )
@@ -41,15 +42,4 @@ class Article < ApplicationRecord
         date.to_s
       end
 
-      def self.creator(article_obj, topic)
-        str_date = Article.get_date(article_obj)
-        Article.create(
-            headline: article_obj.title,
-            url: article_obj.url,
-            date: str_date,
-            news_source: NewsSource.find_by(name: article_obj.name),
-            topic: topic
-        )
-      end
-      
 end
