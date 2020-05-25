@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+NEWS_API_KEY = ENV['news_api_key']
+
+require 'open-uri'
+url = 'http://newsapi.org/v2/top-headlines?'\
+      'country=us&'\${NEWS_API_KEY}
+req = open(url)
+response_body = req.read
+puts response_body
