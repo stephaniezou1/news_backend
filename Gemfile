@@ -43,4 +43,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Serializers
 gem "active_model_serializers", "~> 0.10.10"
 
+# Hiding API Key
 gem 'figaro'
+
+# News API
+gem 'news-api'
+
+# Aylien Text Analysis
+gem "aylien_text_api", "~> 1.0"
+
+gem "prettier", "~> 0.15.0"
