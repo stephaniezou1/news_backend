@@ -26,6 +26,9 @@ class Article < ApplicationRecord
         puts "article seeded"
     end
 
+    ## natural language processor
+    ## aylien API is used for summarizing articles
+
     def summarize
         text_api_key= ENV['aylien_api_key']
         text_api_id= ENV['aylien_api_id']
