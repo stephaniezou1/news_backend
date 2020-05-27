@@ -14,7 +14,7 @@ class TagsController < ApplicationController
     @tag = Tag.find_or_create_by(content: params[:content])
     Joiner.create(tag_id: @tag.id, article_id: params[:article_id])
     @article = Article.find_by(id: params[:article_id])
-    render json: @article
+    render json: {article: ArticleSerializer.new(@article), tag: TagSerializer.new(@tag)}
   end
 
   private
