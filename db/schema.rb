@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_134930) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
+    # t.string "tag"
     t.string "title"
     t.string "author"
     t.string "description"
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_134930) do
   end
 
   create_table "tags", force: :cascade do |t|
+    # t.string "article"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
