@@ -11,7 +11,10 @@ class TagsController < ApplicationController
   end
 
   def create
-    Tag.find_or_create_by(content: params[:content])
+    @tag = Tag.find_or_create_by(content: params[:content])
+    Joiner.create(tag_id: @tag.id, article_id: params[:article_id])
+    @article = Article.find_by(id: params[:article_id])
+    render json: @article
   end
 
   private

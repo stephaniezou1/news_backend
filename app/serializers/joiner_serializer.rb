@@ -1,3 +1,3 @@
 class JoinerSerializer < ActiveModel::Serializer
-  attributes :id, :article_id, :tag_id
+  attributes :id, :tag_name, :tag_id
 end
