@@ -1,11 +1,17 @@
 class ArticlesController < ApplicationController
+  before_action :find_article, only: [:show, :edit, :update]
+  
   def index
       articles = Article.all
       render json: articles
   end
 
   def show 
-    find_article
+    render json: article
+  end
+
+  def update
+    article.update(article_params)
     render json: article
   end
 
