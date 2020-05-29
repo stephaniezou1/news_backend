@@ -1,5 +1,5 @@
 class JoinersController < ApplicationController
-  before_action :find_joiner, only: [:show]
+  before_action :find_joiner, only: [:show, :destroy]
 
   def index
     joiners = Joiner.all
@@ -8,6 +8,11 @@ class JoinersController < ApplicationController
 
   def show 
     render json: @joiner
+  end
+
+  def destroy
+    @joiner.destroy
+    render json: @joiner.article
   end
 
   private
