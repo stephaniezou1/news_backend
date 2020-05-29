@@ -21,7 +21,7 @@ class Article < ApplicationRecord
             url: article.url,
             url_to_image: article.urlToImage,
             content: article.content,
-            likes: 0
+            likes: 5
           )
         end
         puts "article seeded"
