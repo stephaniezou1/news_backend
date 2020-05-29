@@ -20,7 +20,8 @@ class Article < ApplicationRecord
             published_at: article.publishedAt,
             url: article.url,
             url_to_image: article.urlToImage,
-            content: article.content
+            content: article.content,
+            likes: 0
           )
         end
         puts "article seeded"
