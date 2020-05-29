@@ -1,24 +1,13 @@
-# README
+## Ruby on Rails API
+* Built a Ruby on Rails API for the Hegelian Bagel backend.
+* This API consists of 3 domain models with `has_many` and `belongs_to` associations.
+* Pulls in news articles from [News API](https://newsapi.org).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Tools
 
-Things you may want to cover:
+* [Rack CORS](https://github.com/cyu/rack-cors): description
+* [ActiveModel::Serializer](https://github.com/rails-api/active_model_serializers): description
+* [News API](https://newsapi.org)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Live demo
+Coming soon!
