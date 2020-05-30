@@ -42,7 +42,6 @@ In your terminal...
        $ rails db:migrate
        $ rails db:seed```
        
-       
 ## Launch The Server
 
 1. Last step, launch the rails server!
